@@ -2,21 +2,22 @@
 # date: 2017/9/14
 
 # salary = input("Please enter your salary: ")
-salary = 5000
+# salary = 5000
+salary = int(input("请输入你的工资: "))
 shop_id = ['1', '2', '3', '4', '5']
 shop_list = ['iPhone6s', 'Mac Book', 'coffee', 'Python Book', 'Bicyle']
 shop_price = [5800, 9000, 32, 80, 1500]
 goods_name = []
 goods_price = []
 
+print("以下是商品列表：")
 for i in range(5):
     print(shop_id[i] + '. ' + shop_list[i] + '    ' + str(shop_price[i]))
 
 while True:
-    shop_select = int(input("Please enter shop ID: "))
+    shop_select = int(input("请输入商品编号: "))
     price = salary - int(shop_price[shop_select - 1])
-    for i in range(len(goods_price)):
-        diff = salary - int(shop_price[shop_select - 1])
+    diff = salary - int(sum(goods_price))
     # diff = int(shop_price[shop_select - 1]) - salary
     if price < 1:
         print("余额不足，还差", diff)
