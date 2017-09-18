@@ -1,19 +1,109 @@
 # __author__: wang_chongsheng
 # date: 2017/9/15 0015
-menu_catalog = {
-    '四川省': {
-        '成都市': ['金牛区', '成华区', '锦江区', '武侯区', '青羊区'],
-        '泸州市': ['江阳区', '纳溪区', '龙马潭区']
+menu = {
+    '北京': {
+        '朝阳': {
+            '国贸': {
+                'CICC': {},
+                'HP': {},
+                '渣打银行': {},
+                'CCTV': {},
+            },
+            '望京': {
+                '陌陌': {},
+                '奔驰': {},
+                '360': {},
+            },
+            '三里屯': {
+                '优衣库': {},
+                'Apple': {},
+            },
+        },
+        '昌平': {
+            '天通苑': {
+                "链家": {},
+                "我爱我家": {},
+            },
+        },
+        '海淀': {
+            '五道口': {
+                '谷歌': {},
+                '网易': {},
+                'Sohu': {},
+                'Sogo': {},
+                '快手': {},
+            },
+            '中关村': {
+                'Youku': {},
+                'Iqiyi': {},
+                '汽车之家': {},
+                '新东方': {},
+                '腾讯': {},
+            },
+        },
     },
-    '广东省': {
-        '广州市': ['天河区', '越秀区', '黄埔区']
-    }
+    '上海': {
+        '浦东': {
+            '陆家嘴': {
+                'CICC': {},
+                '高盛': {},
+                '摩根': {},
+            },
+            '外滩': {},
+        },
+        '闵行': {},
+        '静安': {},
+    },
+    '山东': {
+        '济南': {},
+        '青岛': {
+            '青岛啤酒': {}
+        },
+    },
 }
 
-for i, v in enumerate(menu_catalog, 1):
-    print(i, '>>>', v)
-    # if choice
-    for j, w in enumerate(menu_catalog[v], 1):
-        print(j, '>>>', w)
-        for x, y in enumerate(menu_catalog[v][w], 1):
-            print(x, '>>>', y)
+back_flag = False
+exit_falg = False
+while not back_flag and not exit_falg:
+    for key in menu:
+        print(key)
+    choice = input("1>>:").strip()
+    if choice == "q":
+        exit_flag = True
+
+    if choice in menu:
+        while not back_flag and not exit_falg:
+            for key2 in menu[choice]:
+                print(key2)
+            choice2 = input('2>>:').strip()
+            if choice2 == "b":
+                back_flag = True
+            if choice2 == "q":
+                exit_flag = True
+
+            if choice2 in menu[choice]:
+                while not back_flag and not exit_falg:
+                    for key3 in menu[choice][choice2]:
+                        print(key3)
+                    choice3 = input('3>>:').strip()
+                    if choice3 == "b":
+                        back_flag = True
+                    if choice3 == "q":
+                        exit_flag = True
+
+                    if choice3 in menu[choice][choice2]:
+                        while not back_flag and not exit_falg:
+                            for key4 in menu[choice][choice2][choice3]:
+                                print(key4)
+                            choice4 = input('4>>:').strip()
+                            print("last level")
+                            if choice4 == "b":
+                                back_flag = True
+                            if choice4 == "q":
+                                exit_flag = True
+                        else:
+                            back_flag = False
+                else:
+                    back_flag = False
+        else:
+            back_flag = False
