@@ -102,13 +102,35 @@
 #         f.write('Alice')
 
 # 文件替换
-f_read = open('TestFile', 'r', encoding='utf8')
-f_write = open('TestFile2', 'w', encoding='utf8')
+# f_read = open('TestFile', 'r', encoding='utf8')
+# f_write = open('TestFile2', 'w', encoding='utf8')
+#
+# n = 0
+# for line in f_read:
+#     n +=1
+#     if n == 5:
+#         # line='hello,Alice\n'
+#         line = ''.join([line,'Hello,Alice\n'])
+#     f_write.write(line)
 
-n = 0
-for line in f_read:
-    n +=1
-    if n == 5:
-        # line='hello,Alice\n'
-        line = ''.join([line,'Hello,Alice\n'])
-    f_write.write(line)
+# with
+# f = open('TestFilE','r')
+# with open('TestFile','r') as f:
+#     print(f.read())
+#     f.readline()
+#
+# print('Hello')
+
+# with 同时管理多个文件
+# with open('TestFile','r') as f_read,open('TestFile1','w') as f_write:
+#     for line in f_read:
+#         f_write.write(line)
+
+# 打印系统保留标识符
+# from keyword import kwlist
+# print(kwlist)
+# for i in kwlist:
+#     print(i)
+
+b = repr("he is happy \n Yes")
+print(b)
