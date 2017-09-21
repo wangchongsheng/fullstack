@@ -26,15 +26,15 @@
 # s.update([1,'qwe'])
 # print(s)
 
-# s.remove(2)
+# s.remove(2)   删除指定字符
 # print(s)
 
-# s.pop()
+# s.pop()   删除任意字符
 # print(s)
 
 # s.clear()
 # print(s)
-# del s
+# del s #删除整个集合
 # print(s)
 
 # 集合操作符：in  in not
@@ -45,7 +45,24 @@
 # print(set('Alice') or set('Alicexxx')) #取交集
 
 a = set([1, 2, 3, 4, 5])
-b = set([4,5,6,7,8])
+b = set([4, 5, 6, 7, 8])
 
-#intersection() 交集
-print(a.intersection(b))
+# intersection() 交集
+# print(a.intersection(b))
+# print(a & b)
+# union 并集
+# print(a.union(b))
+# print(a|b)
+
+# #差集
+# print(a.difference(b)) #in a but not in b
+# print(b.difference(a)) #in b but not in a
+# print(a - b)
+# print(b - a)
+#
+# print(a.symmetric_difference(b)) #symmetric= 对称 差集，反向交集
+# print(a ^ b)
+
+# 父集（超集）
+print(a.issuperset(b))  # a>b判断a是否完全包含b
+print(a.issubset(b))  # a<b子集
