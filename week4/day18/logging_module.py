@@ -10,7 +10,7 @@ import logging
 # logging.error('error message')
 # logging.critical('critical message')
 
-#自定义日志输出格式
+#修改日志输出配置，默认日志输出方式为屏幕输出
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a,%d %b %Y %H:%M:%S',
@@ -26,3 +26,4 @@ logging.info('info message')
 logging.warning('warning message')
 logging.error('error message')
 logging.critical('critical message')
+
