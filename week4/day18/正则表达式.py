@@ -127,6 +127,9 @@ import re
 # print(ret)
 
 # compile 把正则表达式编译成一个正则表达式对象
-obj = re.compile('\.com')
-ret = obj.findall('edalice.comoe')
+# obj = re.compile('\.com')
+# ret = obj.findall('edalice.comoe')
+# print(ret)
+
+ret=re.findall('a[bc]d','abcd')
 print(ret)
