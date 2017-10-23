@@ -38,5 +38,8 @@
 
 # from web import logger
 # from 包/模块 import 模块/方法
-from  web.web2 import logger
-# logger.logger()
+# from  web.web2 import logger
+# loggerplogger()
+# from 包/模块/方法 import 方法
+# from web.web2.logger import logger
+# logger()
