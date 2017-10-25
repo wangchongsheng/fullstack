@@ -15,7 +15,7 @@ import json
 dic = {'name': 'Alice', 'age': '18'}
 
 data = json.dumps(dic)
-f = open('JSON_text2', 'w')
+f = open('JSON_text', 'w')
 
 json.dump(dic,f)
 # f.write(data)
