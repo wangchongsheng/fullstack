@@ -16,7 +16,7 @@ obj.show()
 
 '''
 
-
+"""
 class F:
     __v = '123'
     def __info(self):  #私有方法
@@ -33,3 +33,25 @@ print(ret)
 obj = F()
 re = obj.show()
 print(re)
+"""
+
+#class 执行构造方法
+
+class MyType(type):
+    def __init__(self,*args,**kwargs):
+        #self =Foo
+        print(123)
+    def __call__(self, *args, **kwargs):
+        #self = Foo
+        r = self.__new__()
+
+class Foo(object,metaclass=MyType):
+
+    def __init__(self):
+        pass
+    def __new__(cls, *args, **kwargs):
+        return '对象'
+    def func(self):
+        print("Hello World")
+
+obj =Foo()

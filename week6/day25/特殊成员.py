@@ -85,7 +85,7 @@ li[123]
 li[1:4:2]
 """
 
-
+'''
 class Foo:
     def __init__(self,name,age):
         self.name = name
@@ -101,3 +101,5 @@ li = Foo('Alice',18)
 #2、循环上一步中返回的对象
 for i in li:
     print(i)
+'''
+
