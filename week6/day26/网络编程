@@ -31,3 +31,6 @@ client 下的方法
     sendall() #传送的内容一定时byte类型
 
     close()
+
+
+  四字口诀：一收一发

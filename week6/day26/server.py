@@ -24,8 +24,24 @@ conn, addr = sk.accept()
 # inp = input('>>>')
 # conn.send(bytes(inp,'utf8'))
 
-data = conn.recv(1024)
-print(data)
+# data = conn.recv(1024)
+# print(data)
+while 1:
+    conn, addr = sk.accept()
+    print(addr)
+
+    while 1:
+        try:
+            data = conn.recv(1024)
+        except Exception:
+            break
+
+        if not data: break
+        inp = input('>>>')
+        conn.send(bytes(inp, 'utf8'))
+
+        data = conn.recv(1024)
+        print(data)
 
 # 关闭当前链接
 conn.close()

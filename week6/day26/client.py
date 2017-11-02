@@ -5,12 +5,18 @@
 
 import socket
 
-sk =socket.socket()
+## family type
+sk = socket.socket()
 print(sk)
-address = ('127.0.0.1',8000)
+
+address = ('127.0.0.1', 8000)
 sk.connect(address)
 
-# data = sk.recv(1024) #阻塞
-data = sk.send(bytes('hah','utf8'))
-print(str(data,'utf8'))
+while True:
+    inp = input('>>>')
+    if inp == 'exit':
+        break
+    sk.send(bytes(inp, 'utf8'))
+    data = sk.recv(1024)
+    print(str(data, 'utf8'))
 sk.close()
