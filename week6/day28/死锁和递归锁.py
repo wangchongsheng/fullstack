@@ -48,22 +48,25 @@ class Account:
         self.balance = money
 
     def withdraw(self, num):
+        r.acquire()
         self.balance -= num
-
+        r.release()
     def repay(self, num):
+        r.acquire()
         self.balance += num
-
+        r.release()
 
 def transer(_from, to, count):
-    r=threading.RLock(     )
+    r.acquire()
     _from.withdraw(count)
     to.repay(count)
+    r.release()
 
-
+r=threading.RLock()
 a1 = Account('Alice', 100)
 a2 = Account('Lucy', 200000)
-t1 = threading.Thread = (target = transer, args = (a1, a2, 100))
-t2 = threading.Thread = (target = transer, args = (a2, a1, 200))
+t1 = threading.Thread(target = transer, args = (a1, a2, 100,r))
+t2 = threading.Thread(target = transer, args = (a2, a1, 200,r))
 
 t1.start()
 t2.start()
