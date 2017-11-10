@@ -3,5 +3,6 @@
 # @Site    : 
 # @File    : 进程关系.py
 
-def info():
-    pass
+def info(n,f):
+    print('%s----%s'%(n,f))
+info('Alice',18)
