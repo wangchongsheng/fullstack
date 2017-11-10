@@ -6,5 +6,6 @@
 # f = open('test.txt','r',encoding='utf8')
 # print(f.read())
 
-
-print('你好')
+s = u'你好'
+print (len(s))
+print(type(s))
